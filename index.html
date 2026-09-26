@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260926-logo-sm" />
+  <link rel="stylesheet" href="styles.css?v=20260926-bars3d" />
   </head>
   <body>
       <div class="background-slideshow" aria-hidden="true">
@@ -131,85 +131,97 @@
               <span class="chart-label chart-label-1">시작</span>
               <span class="chart-label chart-label-2">재방문</span>
               <span class="chart-label chart-label-3">안정화</span>
-              <svg viewBox="0 0 640 320" role="img" aria-label="시간이 지날수록 상승하는 매장 성장 흐름 예시 그래프">
+              <svg viewBox="0 0 640 320" role="img" aria-label="시간이 지날수록 높아지는 매장 성장 흐름 예시 그래프">
                 <defs>
-                  <linearGradient id="growth-fill" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0" stop-color="#f27450" stop-opacity=".82" />
-                    <stop offset=".58" stop-color="#d74f31" stop-opacity=".42" />
-                    <stop offset="1" stop-color="#7e281e" stop-opacity=".04" />
+                  <linearGradient id="bar-front" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#f27450" />
+                    <stop offset=".58" stop-color="#d74f31" />
+                    <stop offset="1" stop-color="#9b3426" />
                   </linearGradient>
-                  <linearGradient id="growth-line" x1="0" x2="1" y1="1" y2="0">
+                  <linearGradient id="bar-front-last" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#ff9b7c" />
+                    <stop offset=".56" stop-color="#e66749" />
+                    <stop offset="1" stop-color="#b53b2b" />
+                  </linearGradient>
+                  <linearGradient id="bar-side" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#8b2c20" />
+                    <stop offset="1" stop-color="#471a17" />
+                  </linearGradient>
+                  <linearGradient id="bar-top" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#ffb39b" />
+                    <stop offset="1" stop-color="#b83f2f" />
+                  </linearGradient>
+                  <linearGradient id="growth-arrow-line" x1="0" x2="1" y1="1" y2="0">
                     <stop offset="0" stop-color="#f7f5ef" />
-                    <stop offset=".62" stop-color="#f7f5ef" />
+                    <stop offset=".64" stop-color="#f7f5ef" />
                     <stop offset="1" stop-color="#ff9b7c" />
                   </linearGradient>
-                  <linearGradient id="growth-extrude" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0" stop-color="#9b3426" stop-opacity=".8" />
-                    <stop offset="1" stop-color="#471a17" stop-opacity=".92" />
+                  <linearGradient id="chart-floor" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#d74f31" stop-opacity=".3" />
+                    <stop offset="1" stop-color="#111311" stop-opacity=".08" />
                   </linearGradient>
-                  <linearGradient id="growth-floor" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0" stop-color="#d74f31" stop-opacity=".24" />
-                    <stop offset="1" stop-color="#111311" stop-opacity=".04" />
-                  </linearGradient>
-                  <filter id="growth-glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <filter id="bar-shadow" x="-25%" y="-25%" width="160%" height="170%">
+                    <feDropShadow dx="0" dy="12" stdDeviation="7" flood-color="#111311" flood-opacity=".6" />
+                  </filter>
+                  <filter id="arrow-glow" x="-20%" y="-20%" width="140%" height="140%">
                     <feGaussianBlur stdDeviation="4" result="blur" />
                     <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                   </filter>
-                  <filter id="growth-shadow" x="-20%" y="-20%" width="150%" height="160%">
-                    <feDropShadow dx="0" dy="10" stdDeviation="6" flood-color="#111311" flood-opacity=".58" />
-                  </filter>
                 </defs>
                 <g class="chart-grid" aria-hidden="true">
-                  <line x1="30" y1="70" x2="610" y2="70" />
-                  <line x1="30" y1="140" x2="610" y2="140" />
-                  <line x1="30" y1="210" x2="610" y2="210" />
-                  <line x1="30" y1="280" x2="610" y2="280" />
+                  <line x1="42" y1="70" x2="590" y2="70" />
+                  <line x1="42" y1="135" x2="590" y2="135" />
+                  <line x1="42" y1="200" x2="590" y2="200" />
+                  <line x1="42" y1="265" x2="590" y2="265" />
                 </g>
-                <path class="chart-floor" d="M30 280 L610 280 L578 302 L0 302 Z" />
+                <g class="chart-floor" aria-hidden="true">
+                  <polygon points="42,265 590,265 610,281 66,281" />
+                  <polygon points="66,281 610,281 610,295 66,295" />
+                </g>
                 <g class="chart-floor-grid" aria-hidden="true">
-                  <path d="M30 280 L610 280" />
-                  <path d="M30 280 L0 302" />
-                  <path d="M175 280 L145 302" />
-                  <path d="M320 280 L290 302" />
-                  <path d="M465 280 L435 302" />
-                  <path d="M610 280 L578 302" />
+                  <path d="M42 265 L590 265" />
+                  <path d="M42 265 L66 281" />
+                  <path d="M178 265 L202 281" />
+                  <path d="M314 265 L338 281" />
+                  <path d="M450 265 L474 281" />
+                  <path d="M590 265 L610 281" />
                 </g>
-                <g class="chart-stems" aria-hidden="true">
-                  <line x1="30" y1="270" x2="30" y2="280" />
-                  <line x1="235" y1="238" x2="235" y2="280" />
-                  <line x1="408" y1="181" x2="408" y2="280" />
-                  <line x1="610" y1="42" x2="610" y2="280" />
+                <g class="chart-bars" filter="url(#bar-shadow)">
+                  <g class="chart-bar">
+                    <rect class="bar-front" x="65" y="213" width="58" height="52" rx="2" />
+                    <polygon class="bar-side" points="123,213 141,202 141,254 123,265" />
+                    <polygon class="bar-top" points="65,213 123,213 141,202 83,202" />
+                  </g>
+                  <g class="chart-bar">
+                    <rect class="bar-front" x="151" y="194" width="58" height="71" rx="2" />
+                    <polygon class="bar-side" points="209,194 227,183 227,254 209,265" />
+                    <polygon class="bar-top" points="151,194 209,194 227,183 169,183" />
+                  </g>
+                  <g class="chart-bar">
+                    <rect class="bar-front" x="237" y="168" width="58" height="97" rx="2" />
+                    <polygon class="bar-side" points="295,168 313,157 313,254 295,265" />
+                    <polygon class="bar-top" points="237,168 295,168 313,157 255,157" />
+                  </g>
+                  <g class="chart-bar">
+                    <rect class="bar-front" x="323" y="134" width="58" height="131" rx="2" />
+                    <polygon class="bar-side" points="381,134 399,123 399,254 381,265" />
+                    <polygon class="bar-top" points="323,134 381,134 399,123 341,123" />
+                  </g>
+                  <g class="chart-bar">
+                    <rect class="bar-front" x="409" y="94" width="58" height="171" rx="2" />
+                    <polygon class="bar-side" points="467,94 485,83 485,254 467,265" />
+                    <polygon class="bar-top" points="409,94 467,94 485,83 427,83" />
+                  </g>
+                  <g class="chart-bar chart-bar-last">
+                    <rect class="bar-front" x="495" y="52" width="58" height="213" rx="2" />
+                    <polygon class="bar-side" points="553,52 571,41 571,254 553,265" />
+                    <polygon class="bar-top" points="495,52 553,52 571,41 513,41" />
+                  </g>
                 </g>
-                <path class="growth-area-extrude" d="M30 270 C135 260 160 245 235 238 C320 229 334 188 408 181 C485 172 510 98 610 42 L610 66 C510 122 485 196 408 205 C334 212 320 252 235 259 C160 266 135 281 30 292 Z" />
-                <path class="growth-area" d="M30 270 C135 260 160 245 235 238 C320 229 334 188 408 181 C485 172 510 98 610 42 L610 280 L30 280 Z" />
-                <path class="growth-line-shadow" d="M30 276 C135 266 160 251 235 244 C320 235 334 194 408 187 C485 178 510 104 610 48" />
-                <path class="growth-line" d="M30 270 C135 260 160 245 235 238 C320 229 334 188 408 181 C485 172 510 98 610 42" />
-                <g class="growth-point-wrap">
-                  <ellipse class="point-shadow" cx="30" cy="281" rx="14" ry="4" />
-                  <circle class="growth-point-side" cx="30" cy="276" r="9" />
-                  <circle class="growth-point" cx="30" cy="270" r="9" />
-                  <circle class="point-highlight" cx="27" cy="267" r="2.5" />
-                </g>
-                <g class="growth-point-wrap">
-                  <ellipse class="point-shadow" cx="235" cy="249" rx="14" ry="4" />
-                  <circle class="growth-point-side" cx="235" cy="244" r="9" />
-                  <circle class="growth-point" cx="235" cy="238" r="9" />
-                  <circle class="point-highlight" cx="232" cy="235" r="2.5" />
-                </g>
-                <g class="growth-point-wrap">
-                  <ellipse class="point-shadow" cx="408" cy="192" rx="14" ry="4" />
-                  <circle class="growth-point-side" cx="408" cy="187" r="9" />
-                  <circle class="growth-point" cx="408" cy="181" r="9" />
-                  <circle class="point-highlight" cx="405" cy="178" r="2.5" />
-                </g>
-                <g class="growth-point-wrap growth-point-wrap-last">
-                  <ellipse class="point-shadow" cx="610" cy="54" rx="16" ry="5" />
-                  <circle class="growth-point-side" cx="610" cy="49" r="11" />
-                  <circle class="growth-point growth-point-last" cx="610" cy="42" r="11" />
-                  <circle class="point-highlight" cx="606" cy="38" r="3" />
-                </g>
-                <path class="growth-arrow-shadow" d="M548 84 L610 48 L574 44" />
-                <path class="growth-arrow" d="M548 78 L610 42 L574 38" />
+                <path class="growth-arrow-shadow" d="M55 232 C170 220 238 175 314 130 C395 82 467 55 575 28" />
+                <path class="growth-arrow" d="M55 224 C170 212 238 167 314 122 C395 74 467 47 575 20" />
+                <path class="growth-arrow-head-shadow" d="M575 28 L536 25 M575 28 L560 63" />
+                <path class="growth-arrow-head" d="M575 20 L536 17 M575 20 L560 55" />
               </svg>
             </div>
             <small class="growth-caption">예시 그래픽 · 실제 매출은 상권과 운영 조건에 따라 달라질 수 있습니다.</small>
