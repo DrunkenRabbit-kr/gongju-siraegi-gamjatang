@@ -113,17 +113,26 @@ h1 em, h2 em { color: var(--red-bright); font-style: normal; }
 .growth-points span { color: #f2b09f; font: 600 11px/1 var(--display); letter-spacing: .08em; }
 .growth-points strong { color: var(--paper); font-size: 17px; letter-spacing: -.06em; }
 .growth-points p { grid-column: 2; margin: 4px 0 0; color: #f3d9d1; font-size: 12px; line-height: 1.8; letter-spacing: -.04em; }
-.growth-visual { min-width: 0; padding: 28px 28px 24px; background: rgba(17,19,17,.56); border: 1px solid rgba(247,245,239,.24); box-shadow: 18px 18px 0 rgba(17,19,17,.14); }
+.growth-visual { min-width: 0; padding: 28px 28px 24px; background: linear-gradient(145deg, rgba(17,19,17,.74), rgba(39,25,22,.82)); border: 1px solid rgba(247,245,239,.28); box-shadow: 18px 18px 0 rgba(17,19,17,.18), inset 0 1px 0 rgba(247,245,239,.08); }
 .growth-chart-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #f2b09f; font: 600 10px/1.4 var(--display); letter-spacing: .15em; }
 .growth-chart-head strong { color: var(--paper); font: 700 14px/1.4 var(--sans); letter-spacing: -.05em; }
 .growth-chart { position: relative; margin-top: 25px; }
 .growth-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
 .chart-grid line { stroke: rgba(247,245,239,.16); stroke-width: 1; stroke-dasharray: 3 7; }
+.chart-floor { fill: url(#growth-floor); opacity: .82; }
+.chart-floor-grid path { fill: none; stroke: rgba(247,245,239,.17); stroke-width: 1; stroke-dasharray: 4 8; }
+.chart-stems line { stroke: rgba(242,176,159,.35); stroke-width: 2; stroke-dasharray: 3 6; }
+.growth-area-extrude { fill: url(#growth-extrude); filter: url(#growth-shadow); }
 .growth-area { fill: url(#growth-fill); }
-.growth-line { fill: none; stroke: var(--paper); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; filter: url(#growth-glow); }
-.growth-point { fill: var(--red-bright); stroke: var(--paper); stroke-width: 4; }
+.growth-line-shadow { fill: none; stroke: #76281e; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
+.growth-line { fill: none; stroke: url(#growth-line); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; filter: url(#growth-glow); }
+.growth-point-side { fill: #8b2c20; stroke: #f2b09f; stroke-width: 2; }
+.growth-point { fill: var(--red-bright); stroke: var(--paper); stroke-width: 3; }
 .growth-point-last { fill: var(--paper); stroke: var(--red-bright); }
-.growth-arrow { fill: none; stroke: var(--red-bright); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.point-shadow { fill: #111311; opacity: .6; }
+.point-highlight { fill: var(--paper); opacity: .92; }
+.growth-arrow-shadow { fill: none; stroke: #76281e; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; opacity: .82; }
+.growth-arrow { fill: none; stroke: #ff9b7c; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
 .chart-label { position: absolute; bottom: 1px; color: #aeb5a8; font: 600 10px/1 var(--display); letter-spacing: .1em; }
 .chart-label-1 { left: 4%; }
 .chart-label-2 { left: 42%; }
