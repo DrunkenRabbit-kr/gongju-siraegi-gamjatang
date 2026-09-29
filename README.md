@@ -13,13 +13,16 @@ GitHub Pages에 바로 올릴 수 있는 정적 홈페이지입니다. `index.ht
 
 ## 상담 폼 연결
 
-GitHub Pages는 서버가 없는 정적 호스팅이므로 현재 폼은 신청자 브라우저의 `localStorage`에만 임시 저장합니다. 따라서 지금 상태에서는 관리자가 확인할 수 있는 별도 장소가 없습니다. 실제 접수를 받으려면 `script.js`의 HTML 폼에 있는 `data-form-endpoint`에 Formspree, Google Apps Script Web App 등 실제 POST 주소를 넣으세요.
+이 사이트는 GitHub Pages의 정적 호스팅 구조라서 별도 서버 없이 외부 폼 수신 endpoint로 상담 신청을 전송합니다.
 
-```html
-<form ... data-form-endpoint="https://formspree.io/f/발급받은-ID">
-```
+- 수신처: `fcdesign000@gmail.com`
+- 전송 항목: 이름, 연락처, 희망 지역, 창업 시기, 남기고 싶은 이야기
+- 브라우저 `localStorage`에는 신청 내용을 저장하지 않습니다.
+- 현재 연결 방식은 FormSubmit AJAX endpoint입니다.
+- FormSubmit을 처음 사용하는 경우 첫 신청 후 수신 이메일로 온 확인 링크를 눌러야 메일 수신이 활성화됩니다.
+- 수신 주소를 바꾸려면 `index.html`의 `data-form-endpoint`를 변경하세요.
 
-실제 본사 연락처와 개인정보처리방침 URL이 정해지면 푸터 및 상담 안내 문구에 연결하면 됩니다.
+전송 주소가 없거나 전송에 실패하면 신청이 접수된 것으로 표시하지 않고, 입력 내용도 초기화하지 않습니다.
 
 ## GitHub Pages 배포
 
