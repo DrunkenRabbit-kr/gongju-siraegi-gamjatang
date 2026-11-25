@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drunkenrabbit-kr.github.io/gongju-siraegi-gamjatang/sitemap.xml
