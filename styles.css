@@ -152,10 +152,7 @@ h1 em, h2 em { color: var(--red-bright); font-style: normal; }
 .chart-bar-last .bar-front { fill: url(#bar-front-last); }
 .bar-side { fill: url(#bar-side); stroke: rgba(17,19,17,.35); stroke-width: 1; }
 .bar-top { fill: url(#bar-top); stroke: rgba(247,245,239,.28); stroke-width: 1; }
-.growth-arrow-shadow { fill: none; stroke: #76281e; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; opacity: .92; }
-.growth-arrow { fill: none; stroke: url(#growth-arrow-line); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; filter: url(#arrow-glow); }
-.growth-arrow-head-shadow { fill: none; stroke: #76281e; stroke-width: 13; stroke-linecap: round; stroke-linejoin: round; opacity: .92; }
-.growth-arrow-head { fill: none; stroke: #ff9b7c; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; filter: url(#arrow-glow); }
+.growth-arrow { fill: none; stroke: url(#growth-arrow-line); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; filter: url(#arrow-depth); }
 .chart-label { position: absolute; z-index: 2; bottom: 8px; color: #aeb5a8; font: 700 calc(10px + 3pt)/1 var(--display); letter-spacing: .1em; pointer-events: none; }
 .chart-label-1 { left: 4%; }
 .chart-label-2 { left: 42%; }
