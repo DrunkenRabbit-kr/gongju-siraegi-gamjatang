@@ -36,24 +36,22 @@ document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe
 
 const form = document.querySelector('#inquiry-form');
 const status = document.querySelector('#form-status');
+let inquirySubmitting = false;
 
 form?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  if (!form.reportValidity()) return;
+  if (inquirySubmitting || !form.reportValidity()) return;
 
   const formData = new FormData(form);
-  const payload = Object.fromEntries(formData.entries());
-  const endpoint = form.dataset.formEndpoint?.trim();
+  const endpoint = form.dataset.formEndpoint?.trim() || form.action;
+  const submitButton = form.querySelector('button[type="submit"]');
 
-  status.textContent = '상담 신청을 확인하고 있습니다…';
+  status.textContent = '상담 신청을 보내고 있습니다…';
   status.style.color = '#bd3f28';
 
-  if (!endpoint) {
-    localStorage.setItem('gongjuSiraegiInquiryDraft', JSON.stringify({ ...payload, savedAt: new Date().toISOString() }));
-    status.textContent = '현재는 신청자 브라우저에만 임시 저장됩니다. 관리자 확인용 전송 주소를 연결해야 실제 접수가 가능합니다.';
-    form.reset();
-    return;
-  }
+  inquirySubmitting = true;
+  submitButton.disabled = true;
+  form.setAttribute('aria-busy', 'true');
 
   try {
     const response = await fetch(endpoint, {
@@ -65,7 +63,11 @@ form?.addEventListener('submit', async (event) => {
     status.textContent = '신청이 접수되었습니다. 확인 후 연락드리겠습니다.';
     form.reset();
   } catch (error) {
-    status.textContent = '전송에 실패했습니다. 잠시 후 다시 시도해 주세요.';
+    status.textContent = '전송에 실패했습니다. 입력하신 내용은 유지됩니다. 잠시 후 다시 시도해 주세요.';
     status.style.color = '#8c1e12';
+  } finally {
+    inquirySubmitting = false;
+    submitButton.disabled = false;
+    form.removeAttribute('aria-busy');
   }
 });
