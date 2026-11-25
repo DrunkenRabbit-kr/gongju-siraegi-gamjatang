@@ -185,10 +185,10 @@ h1 em, h2 em { color: var(--red-bright); font-style: normal; }
 .fit-copy h2 { margin-bottom: 36px; }
 .fit-copy > p:not(.eyebrow) { max-width: 360px; margin: 0 0 40px; color: #6b7268; font-size: calc(14px + 3pt); line-height: 1.95; letter-spacing: -.05em; }
 .fit-list { align-self: center; border-top: 1px solid var(--line); }
-.fit-row { display: grid; grid-template-columns: 36px 1fr 30px; gap: 16px; align-items: center; min-height: 86px; border-bottom: 1px solid var(--line); }
-.fit-row span { color: var(--red); font: 600 calc(11px + 3pt)/1 var(--display); }
-.fit-row strong { font-size: 17px; letter-spacing: -.06em; }
-.fit-row i { color: #8b9087; font: normal 20px/1 var(--display); text-align: right; }
+.fit-row { display: grid; grid-template-columns: 38px minmax(0, 1fr) 24px; gap: 16px; align-items: center; min-height: 112px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.fit-row span { color: var(--red); font: 700 22px/1.4 var(--display); }
+.fit-row strong { font-family: "NanumSquare", "Apple SD Gothic Neo", sans-serif; font-size: 24px; line-height: 1.65; letter-spacing: -.03em; word-break: keep-all; overflow-wrap: anywhere; }
+.fit-row i { color: #617553; font: normal 24px/1 var(--sans); text-align: right; }
 
 .process { padding: 120px 0 130px; }
 .process-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; }
@@ -295,8 +295,9 @@ h1 em, h2 em { color: var(--red-bright); font-style: normal; }
   .growth-caption { font-size: calc(14px + 3pt); }
   .fit-layout { grid-template-columns: 1fr; gap: 60px; }
   .fit-copy > p:not(.eyebrow) { font-size: calc(18px + 3pt); line-height: 1.85; }
-  .fit-row span { font-size: calc(15px + 3pt); }
-  .fit-row strong { font-size: 19px; }
+  .fit-row { grid-template-columns: 30px minmax(0, 1fr) 22px; gap: 12px; }
+  .fit-row span { font-size: 22px; }
+  .fit-row strong { font-size: 24px; }
   .process-top { display: block; }
   .process-top h2 { margin-top: 32px; text-align: left; }
   .process-grid { grid-template-columns: 1fr 1fr; margin-top: 55px; }
