@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20261125-partner-check" />
+    <link rel="stylesheet" href="styles.css?v=20261125-growth-arrow" />
   </head>
   <body>
       <div class="background-slideshow" aria-hidden="true">
@@ -161,7 +161,7 @@
                   <linearGradient id="growth-arrow-line" x1="0" x2="1" y1="1" y2="0">
                     <stop offset="0" stop-color="#f7f5ef" />
                     <stop offset=".64" stop-color="#f7f5ef" />
-                    <stop offset="1" stop-color="#ff9b7c" />
+                    <stop offset="1" stop-color="#f4b294" />
                   </linearGradient>
                   <linearGradient id="chart-floor" x1="0" x2="0" y1="0" y2="1">
                     <stop offset="0" stop-color="#d74f31" stop-opacity=".3" />
@@ -170,9 +170,11 @@
                   <filter id="bar-shadow" x="-25%" y="-25%" width="160%" height="170%">
                     <feDropShadow dx="0" dy="12" stdDeviation="7" flood-color="#111311" flood-opacity=".6" />
                   </filter>
-                  <filter id="arrow-glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
-                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  <marker id="growth-arrow-tip" viewBox="0 0 24 24" refX="20" refY="12" markerWidth="28" markerHeight="28" markerUnits="userSpaceOnUse" orient="auto">
+                    <path d="M3 3 L21 12 L3 21 L7 12 Z" fill="#f4b294" />
+                  </marker>
+                  <filter id="arrow-depth" x="-15%" y="-20%" width="135%" height="150%">
+                    <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#1b100e" flood-opacity=".4" />
                   </filter>
                 </defs>
                 <g class="chart-grid" aria-hidden="true">
@@ -225,10 +227,7 @@
                     <polygon class="bar-top" points="495,52 553,52 571,41 513,41" />
                   </g>
                 </g>
-                <path class="growth-arrow-shadow" d="M55 232 C170 220 238 175 314 130 C395 82 467 55 575 28" />
-                <path class="growth-arrow" d="M55 224 C170 212 238 167 314 122 C395 74 467 47 575 20" />
-                <path class="growth-arrow-head-shadow" d="M575 28 L536 25 M575 28 L560 63" />
-                <path class="growth-arrow-head" d="M575 20 L536 17 M575 20 L560 55" />
+                <path class="growth-arrow" d="M55 224 C225 207 380 89 568 20" marker-end="url(#growth-arrow-tip)" />
               </svg>
             </div>
             <small class="growth-caption">예시 그래픽 · 실제 매출은 상권과 운영 조건에 따라 달라질 수 있습니다.</small>
